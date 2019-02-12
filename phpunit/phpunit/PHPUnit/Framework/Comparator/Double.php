@@ -90,12 +90,12 @@ class PHPUnit_Framework_Comparator_Double extends PHPUnit_Framework_Comparator_N
      *                           fails. Contains information about the
      *                           specific errors that lead to the failure.
      */
-    public function assertEquals($expected, $actual, $delta = 0, $canonicalize = FALSE, $ignoreCase = FALSE)
+    public function assertEquals($expected, $actual, $delta = 0, $canonicalize = FALSE, $ignoreCase = FALSE, array &$processed = array())
     {
         if ($delta == 0) {
             $delta = self::EPSILON;
         }
 
-        parent::assertEquals($expected, $actual, $delta, $canonicalize, $ignoreCase);
+        parent::assertEquals($expected, $actual, $delta, $canonicalize, $ignoreCase, $processed);
     }
 }
